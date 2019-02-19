@@ -22,9 +22,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :job_id %>
-    <%= form.text_field :job_id %>
+    <% form.label :job %>
+    <% form.collection_select :job_id, Job.all, :id, :name%>
   </div>
+
+    <div class="field">
+      <%= form.label :complete%>
+      <%= form.check_box :complete%>
+    </div>
 
   <div class="actions">
     <%= form.submit %>
